@@ -3,6 +3,7 @@
     console.log('links:', links);
   });*/
   const titleClickHandler = function(event){
+    event.preventDefault();
     const clickedElement = this;
     console.log('Link was clicked!');
 
@@ -29,9 +30,14 @@
 
   /* get 'href' attribute from the clicked link */
 
+    const articleSelector = a.getAttribute(href);
+
   /* find the correct article using the selector (value of 'href' attribute) */
 
+    const targetArticle = document.querySelector(href);
+
   /* add class 'active' to the correct article */
+    this .targetArticle.add('active');
   }
   
   const links = document.querySelectorAll('.titles a');
