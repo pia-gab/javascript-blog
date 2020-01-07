@@ -100,11 +100,10 @@ body {
 .tags {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 250px;
 }
 
 .list-horizontal li {

@@ -118,7 +118,8 @@
     const clickedElement = this;
     const href = clickedElement.getAttribute('href');
     const tag = href.replace('#tag-', '');
-    const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
+    const activeTags = document.querySelectorAll('a.active[href^="#tag-' + tag + '"]') ;
+    console.log(activeTags);
     for (let activeTag of activeTags) {
       activeTag.classList.remove('active');
     }
@@ -181,7 +182,7 @@
     const clickedElement = this;
     const href = clickedElement.getAttribute('href');
     //console.log(href);
-    const activeAuthorLinks = document.querySelectorAll('a.active[href^="' + href + '"]');
+    const activeAuthorLinks = document.querySelectorAll('.list.authors a');
     for (let activeAuthor of activeAuthorLinks) {
       activeAuthor.classList.remove('active');
     }
