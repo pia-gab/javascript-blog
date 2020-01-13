@@ -102,8 +102,8 @@
         tagWrapper.insertAdjacentHTML('afterbegin', html);
       }
     const tagList = document.querySelector('.tags');
+    console.log(tagList);
     const tagsParams = calculateTagsParams(allTags);
-    //console.log(tagsParams);
     let allTagsHTML = '';
     for (let tag in allTags) {
       allTagsHTML += '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + '</a></li>';
@@ -118,12 +118,13 @@
     const clickedElement = this;
     const href = clickedElement.getAttribute('href');
     const tag = href.replace('#tag-', '');
-    const activeTags = document.querySelectorAll('a.active[href^="#tag-' + tag + '"]') ;
+    const activeTags = document.querySelectorAll('a.active[href^="#tag-' + href + '"]');
     console.log(activeTags);
     for (let activeTag of activeTags) {
       activeTag.classList.remove('active');
     }
-    const tags = document.querySelectorAll('a[href^="#tag-' + href + '"]');
+    const tags = document.querySelectorAll('a[href^="#tag-' + tag + '"]');
+    console.log(tags);
     for (let singleTag of tags) {
       singleTag.classList.add('active');
     }
@@ -134,6 +135,11 @@
     for (let tagLink of tagLinks) 
     {
       tagLink.addEventListener('click', tagClickHandler);
+    }
+    const rightsideLinks = document.querySelectorAll('.tags li a');
+    for (let rightsideLink of rightsideLinks) 
+    {
+      rightsideLink.addEventListener('click', tagClickHandler);
     }
   }
 
