@@ -118,7 +118,7 @@
     const clickedElement = this;
     const href = clickedElement.getAttribute('href');
     const tag = href.replace('#tag-', '');
-    const activeTags = document.querySelectorAll('a.active[href^="#tag-' + href + '"]');
+    const activeTags = document.querySelectorAll('a.active');
     console.log(activeTags);
     for (let activeTag of activeTags) {
       activeTag.classList.remove('active');
